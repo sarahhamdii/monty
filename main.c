@@ -13,8 +13,9 @@ int main(int argc, char **argv)
 	char buff[1024];
 	char *line = NULL;
 	FILE *file;
-	stack_t stack = NULL;
-	unsigned int number = 0;
+	/**ssize_t line_number = 1;*/
+	stack_t *stack = NULL;
+	unsigned int n = 0;
 
 	
 	if (argc != 2)
@@ -26,17 +27,17 @@ int main(int argc, char **argv)
 	bus.file = file;
 	if(!file)
 	{
-		fprint(stderr, "Error: Can't open file %s\n, argv[1]");
+		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	while (line number > 0)
+	while (line)
 	{
-		line number = fgets(&buff, 1024, file);
+		line = fgets(buff, 1024, file);
 		bus.buff = buff;
-		bff++;
-		if (line number > 0)
+		buff++;
+		if (line)
 		{
-			execute(buff, &stack, number, file);
+			execute(buff, &stack, n, file);
 		}
 	}
 	free_stack(stack);

@@ -54,7 +54,9 @@ typedef struct bus_s
 	FILE *file;
 	char *buff;
 	int number;
-} bus_t
+} bus_t;
 extern bus_t bus;
 
+void f_push(stack_t** head, int value);
 
+#endif
