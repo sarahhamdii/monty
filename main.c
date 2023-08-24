@@ -1,5 +1,5 @@
 #include "monty.h"
-bus_t bus = {"stack", NULL, NULL, 0};
+bus_t bus = {NULL, NULL, NULL, 0};
 
 /**
  * main - main code
@@ -22,10 +22,9 @@ int main(int argc, char **argv)
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
-	file = fopen(argv[1], "r");
-	if (file != NULL)
-		bus.file = file;
-	else
+	file = fopen(argv[1], "r");		
+	bus.file = file;
+	if(!file)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);

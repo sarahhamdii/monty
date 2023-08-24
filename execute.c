@@ -7,14 +7,14 @@
  * @n: unsigned int
  * @file: pointer
  *
- * Return: no void
+ * Return.: void
  */
 int execute(char *buff, stack_t **stack, unsigned int n, FILE *file)
 {
 	instruction_t op[] = {
 		{"push", push},
 		/**{"pall", pall},*/
-		      {NULL, NULL},
+		      /**{NULL, NULL},*/
 	};
 			/**{"pint", pint}, {"pop", pop}, {"swap", swap},
 			{"add", add}, {"nop", nop}};*/
@@ -33,9 +33,12 @@ int execute(char *buff, stack_t **stack, unsigned int n, FILE *file)
 			return 0;
 		}
 	}
+	if (line && op[i].opcode == NULL)
+{
 	fprintf(stderr, "L%d: unknown instruction %s\n", n, line);
 	fclose(file);
 	free(buff);
 	free_stack(*stack);
-	exit(EXIT_FAILURE);
+}
+	return(1);
 }
