@@ -65,4 +65,5 @@ int execute(char *buff, stack_t **stack, unsigned int n, FILE *file);
 /**void pall(stack_t **head, unsigned int number);*/
 void push(stack_t **top, unsigned int n);
 void pall(stack_t **top, unsigned int n);
+
 #endif

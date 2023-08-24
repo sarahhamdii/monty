@@ -1,4 +1,5 @@
 #include "monty.h"
+
 bus_t bus = {NULL, NULL, NULL, 0};
 
 /**
@@ -29,15 +30,14 @@ int main(int argc, char **argv)
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	while (line)
+	while (1)
 	{
 		line = fgets(buff, sizeof(buff), file);
+		if (line == NULL)
+                        break;
 		bus.buff = buff;
 		n++;
-		if (line != NULL)
-		{
-			execute(line, &stack, n, file);
-		}
+		execute(line, &stack, n, file);
 	}
 	free_stack(stack);
 	fclose(file);

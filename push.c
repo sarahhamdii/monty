@@ -12,22 +12,16 @@ void push(stack_t **top, unsigned int n)
 
 	if(bus.arg)
 	{
-		/**fprintf(stderr, "L%d: usage: push integer\n", n);
-		fclose(bus.file);
-		**free(bus.buff);*
-		free_stack(*top);
-		exit(EXIT_FAILURE);*/
-	if (bus.arg[0] == '-')
-		i++;
-	for (; bus.arg[i] != '\0'; i++)
-	{
-		if (bus.arg[i] < '0' || bus.arg[i] < '9')
-			sign = 1;
-	}
-	if (sign == 1)
-	{
+		if (bus.arg[0] == '-')
+			i++;
+		for (; bus.arg[i] != '\0'; i++)
+		{
+			if (bus.arg[i] < '0' || bus.arg[i] > '9')
+				sign = 1;
+		}
+		if (sign == 1)
+		{
 		/**printf("sara");*/
-
 			fprintf(stderr, "L%d: usage: push integer\n", n);
 		/**printf("sara");*/
 			fclose(bus.file);
@@ -36,11 +30,10 @@ void push(stack_t **top, unsigned int n)
 			exit(EXIT_FAILURE);
 		}
 	}
-	
 	head = malloc(sizeof(stack_t));
 	if (head == NULL)
 	{
-		printf("Error\n");
+		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
 	head->next = NULL;

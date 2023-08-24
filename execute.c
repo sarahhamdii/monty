@@ -33,12 +33,10 @@ int execute(char *buff, stack_t **stack, unsigned int n, FILE *file)
 			return 0;
 		}
 	}
-	if (line && op[i].opcode == NULL)
-{
+	/**if (line && op[i].opcode == NULL)*/
 	fprintf(stderr, "L%d: unknown instruction %s\n", n, line);
 	fclose(file);
 	free(buff);
 	free_stack(*stack);
-}
-	return(1);
+	return(EXIT_FAILURE);
 }
