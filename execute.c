@@ -7,7 +7,7 @@
  * @n: unsigned int
  * @file: pointer
  *
- * Return.: void
+ * Return.: 1
  */
 int execute(char *buff, stack_t **stack, unsigned int n, FILE *file)
 {

@@ -10,35 +10,38 @@ void push(stack_t **top, unsigned int n)
 	int i = 0, sign = 0;
 	stack_t *head, *temp;
 
-	if(!bus.arg)
+	if(bus.arg)
 	{
-		fprintf(stderr, "L%d: usage: push integer\n", n);
+		/**fprintf(stderr, "L%d: usage: push integer\n", n);
 		fclose(bus.file);
-		free(bus.buff);
+		**free(bus.buff);*
 		free_stack(*top);
-		exit(EXIT_FAILURE);
-	}
+		exit(EXIT_FAILURE);*/
 	if (bus.arg[0] == '-')
 		i++;
-	while (bus.arg[i] != '\0')
+	for (; bus.arg[i] != '\0'; i++)
 	{
-		if (bus.arg[i] < 48 || bus.arg[i]< 57)
+		if (bus.arg[i] < '0' || bus.arg[i] < '9')
 			sign = 1;
-		i++;
 	}
 	if (sign == 1)
 	{
+		/**printf("sara");*/
+
 			fprintf(stderr, "L%d: usage: push integer\n", n);
+		/**printf("sara");*/
 			fclose(bus.file);
-			free(bus.buff), free_stack(*top);
+			/**free(bus.buff);*/
+			free_stack(*top);
 			exit(EXIT_FAILURE);
 		}
+	}
 	
 	head = malloc(sizeof(stack_t));
 	if (head == NULL)
 	{
 		printf("Error\n");
-		exit(0);
+		exit(EXIT_FAILURE);
 	}
 	head->next = NULL;
 	head->n = atoi(bus.arg);

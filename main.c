@@ -31,7 +31,7 @@ int main(int argc, char **argv)
 	}
 	while (line)
 	{
-		line = fgets(buff, 1024, file);
+		line = fgets(buff, sizeof(buff), file);
 		bus.buff = buff;
 		n++;
 		if (line != NULL)
