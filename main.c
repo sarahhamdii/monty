@@ -11,7 +11,7 @@ bus_t bus = {NULL, NULL, NULL, 0};
 int main(int argc, char **argv)
 {
 	char buff[1024];
-	char *line = NULL;
+	char *line;
 	FILE *file;
 	/**ssize_t line_number = 1;*/
 	stack_t *stack = NULL;
@@ -36,7 +36,7 @@ int main(int argc, char **argv)
 		n++;
 		if (line != NULL)
 		{
-			execute(buff, &stack, n, file);
+			execute(line, &stack, n, file);
 		}
 	}
 	free_stack(stack);

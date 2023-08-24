@@ -13,8 +13,8 @@ int execute(char *buff, stack_t **stack, unsigned int n, FILE *file)
 {
 	instruction_t op[] = {
 		{"push", push},
-		/**{"pall", pall},*/
-		      /**{NULL, NULL},*/
+		{"pall", pall},
+		  {NULL, NULL},
 	};
 			/**{"pint", pint}, {"pop", pop}, {"swap", swap},
 			{"add", add}, {"nop", nop}};*/

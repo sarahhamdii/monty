@@ -57,12 +57,12 @@ typedef struct bus_s
 } bus_t;
 extern bus_t bus;
 
-void f_push(stack_t** head, int value);
+int main(int argc, char **argv);
 void free_stack(stack_t *head);
 int execute(char *buff, stack_t **stack, unsigned int n, FILE *file);
 /**void execute(stack_t **top, char *s, int n);*/
 /**void push(stack_t **head, unsigned int number);*/
-void pall(stack_t **head, unsigned int number);
+/**void pall(stack_t **head, unsigned int number);*/
 void push(stack_t **top, unsigned int n);
-
+void pall(stack_t **top, unsigned int n);
 #endif
