@@ -61,7 +61,8 @@ void f_push(stack_t** head, int value);
 void free_stack(stack_t *head);
 int execute(char *buff, stack_t **stack, unsigned int n, FILE *file);
 /**void execute(stack_t **top, char *s, int n);*/
-void push(stack_t **head, unsigned int number);
+/**void push(stack_t **head, unsigned int number);*/
 void pall(stack_t **head, unsigned int number);
+void push(stack_t **top, unsigned int n);
 
 #endif
