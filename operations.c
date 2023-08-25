@@ -31,3 +31,23 @@ void nop(stack_t **top, unsigned int n)
 	(void) n;
 }
 
+/**
+ *
+ *
+ */
+void swap(stack_t **top, unsigned int n)
+{
+	int temp;
+
+	if (*top == NULL || (*top)->next == NULL)
+	{
+		fprintf(stderr, "L%d: can't swap, stack too short\n", n);
+		fclose(bus.file);
+        free(bus.buff);
+	free_stack(*top);
+	exit(EXIT_FAILURE);
+	}
+	temp = (*top)->n;
+	(*top)->n = (*top)->next->n;
+	(*top)->next->n = temp;
+}
