@@ -1,9 +1,9 @@
 #include "monty.h"
 
 /**
- *
- *
- *
+ * pint -  prints the value
+ * @top: pointer
+ * @n: number
  */
 
 void pint(stack_t **top, unsigned int n)

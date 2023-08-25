@@ -11,23 +11,16 @@
  */
 int execute(char *buff, stack_t **stack, unsigned int n, FILE *file)
 {
-	instruction_t op[] = {
-		{"push", push},
-		{"pall", pall},
-		{"pint", pint},
-		{"pop", pop},
-		{"nop", nop},
-		{"swap", swap},
-		{"add", add},
-		{"sub", sub},
-		{"div", divide},
-		{"mul", mul},
-		{"mod", mod},
-		{NULL, NULL},
-	};
 	unsigned int i = 0;
 	char *line;
-
+	instruction_t op[] = {{"push", push},
+		{"pall", pall}, {"pint", pint},
+		{"pop", pop}, {"nop", nop},
+		{"swap", swap}, {"add", add},
+		{"sub", sub}, {"div", divide},
+		{"mul", mul}, {"mod", mod},
+		{NULL, NULL},
+	};
 	line = strtok(buff, " \n\t");
 	if (line && line[0] == '#')
 		return (0);

@@ -32,8 +32,9 @@ void nop(stack_t **top, unsigned int n)
 }
 
 /**
- *
- *
+ * swap - swaps the top two elements of the stack
+ * @top: pointer
+ * @n: number
  */
 void swap(stack_t **top, unsigned int n)
 {
@@ -43,9 +44,9 @@ void swap(stack_t **top, unsigned int n)
 	{
 		fprintf(stderr, "L%d: can't swap, stack too short\n", n);
 		fclose(bus.file);
-        free(bus.buff);
-	free_stack(*top);
-	exit(EXIT_FAILURE);
+		free(bus.buff);
+		free_stack(*top);
+		exit(EXIT_FAILURE);
 	}
 	temp = (*top)->n;
 	(*top)->n = (*top)->next->n;

@@ -15,7 +15,7 @@ void add(stack_t **top, unsigned int n)
 		exit(EXIT_FAILURE);
 	}
 	(*top)->next->n += (*top)->n;
-	pop(top, n); 
+	pop(top, n);
 }
 /**
  * sub - subtracts
@@ -65,7 +65,7 @@ void divide(stack_t **top, unsigned int n)
 }
 
 /**
- * mul - multiplies 
+ * mul - multiplies
  * @top: pointer
  * @n: number
  */
