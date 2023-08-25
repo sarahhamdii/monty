@@ -32,14 +32,24 @@ int main(int argc, char **argv)
 	}
 	while (1)
 	{
-		line = fgets(buff, sizeof(buff), file);
+		line = fgets(buff, 1024, file);
 		if (line == NULL)
                         break;
-		bus.buff = buff;
+		bus.buff = malloc(strlen(buff) + 1); 
+		if (bus.buff == NULL)
+    {
+        fprintf(stderr, "Memory allocation error\n");
+        fclose(file);
+        free_stack(stack);
+        exit(EXIT_FAILURE);
+    }
+		strcpy(bus.buff, buff);
 		n++;
-		execute(line, &stack, n, file);
+		/**if (line != NULL)*/
+			execute(line, &stack, n, file);
+			free(bus.buff);
 	}
-	free_stack(stack);
 	fclose(file);
+	free_stack(stack);
 	return (0);
 }

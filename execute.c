@@ -14,29 +14,37 @@ int execute(char *buff, stack_t **stack, unsigned int n, FILE *file)
 	instruction_t op[] = {
 		{"push", push},
 		{"pall", pall},
-		  {NULL, NULL},
+		{NULL, NULL},
 	};
 			/**{"pint", pint}, {"pop", pop}, {"swap", swap},
 			{"add", add}, {"nop", nop}};*/
-	unsigned int i;
+	unsigned int i = 0;
 	char *line;
 
 	line = strtok(buff, " \n\t");
 	if (line && line[0] == '#')
 		return 0;
 	bus.arg = strtok(NULL, " \n\t");
-	for (i = 0; op[i].opcode != NULL; i++)
+	if (bus.arg && bus.arg[strlen(bus.arg) - 1] == '$')
+    bus.arg[strlen(bus.arg) - 1] = '\0';
+	while (op[i].opcode && line)
 	{
 		if(strcmp(line, op[i].opcode) == 0)
 		{
 			op[i].f(stack, n);
 			return 0;
 		}
+		i++;
 	}
-	/**if (line && op[i].opcode == NULL)*/
+	if (line && op[i].opcode == NULL)
+{
+	 
 	fprintf(stderr, "L%d: unknown instruction %s\n", n, line);
 	fclose(file);
 	free(buff);
 	free_stack(*stack);
-	return(EXIT_FAILURE);
+
+exit(EXIT_FAILURE);
+} 
+	return(1);
 }

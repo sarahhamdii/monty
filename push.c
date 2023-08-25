@@ -8,6 +8,7 @@
 void push(stack_t **top, unsigned int n)
 {
 	int i = 0, sign = 0;
+	int parsed_value = atoi(bus.arg);
 	stack_t *head, *temp;
 
 	if(bus.arg)
@@ -19,13 +20,11 @@ void push(stack_t **top, unsigned int n)
 			if (bus.arg[i] < '0' || bus.arg[i] > '9')
 				sign = 1;
 		}
-		if (sign == 1)
+		if (sign == 1 || bus.arg[i-1] == '-')
 		{
-		/**printf("sara");*/
 			fprintf(stderr, "L%d: usage: push integer\n", n);
-		/**printf("sara");*/
 			fclose(bus.file);
-			/**free(bus.buff);*/
+			free(bus.buff);
 			free_stack(*top);
 			exit(EXIT_FAILURE);
 		}
@@ -37,7 +36,7 @@ void push(stack_t **top, unsigned int n)
 		exit(EXIT_FAILURE);
 	}
 	head->next = NULL;
-	head->n = atoi(bus.arg);
+	head->n = parsed_value;
 	if(!(*top))
 		*top = head, (*top)->next = NULL, (*top)->prev = NULL;
 	else
