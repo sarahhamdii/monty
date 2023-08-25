@@ -63,3 +63,22 @@ void divide(stack_t **top, unsigned int n)
 	(*top)->next->n /= (*top)->n;
 	pop(top, n);
 }
+
+/**
+ * 
+ *
+ *
+ */
+void mul(stack_t **top, unsigned int n)
+{
+	if (*top == NULL || (*top)->next == NULL)
+	{
+		fprintf(stderr, "L%d: can't mul, stack too short\n", n);
+		fclose(bus.file);
+		free(bus.file);
+		free_stack(*top);
+		exit(EXIT_FAILURE);
+	}
+	(*top)->next->n *= (*top)->n;
+	pop(top, n);
+}

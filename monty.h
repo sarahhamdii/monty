@@ -69,5 +69,6 @@ void swap(stack_t **top, unsigned int n);
 void add(stack_t **top, unsigned int n);
 void sub(stack_t **top, unsigned int n);
 void divide(stack_t **top, unsigned int n);
+void mul(stack_t **top, unsigned int n);
 
 #endif
