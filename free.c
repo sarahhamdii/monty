@@ -9,8 +9,6 @@ void free_stack(stack_t *head)
 {
 	stack_t *new;
 
-	/**if (head == NULL)
-		return;*/
 	while (head != NULL)
 	{
 		new = head;

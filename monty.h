@@ -1,8 +1,6 @@
 #ifndef MONTY_H
 #define MONTY_H
 
-#define DELIMS "\n \r\t"
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/types.h>
@@ -62,8 +60,8 @@ extern bus_t bus;
 int main(int argc, char **argv);
 void free_stack(stack_t *head);
 int execute(char *buff, stack_t **stack, unsigned int n, FILE *file);
-/**void push(stack_t **top, unsigned int n);*/
 void pall(stack_t **top, unsigned int n);
 void push(stack_t **stack, unsigned int line_number);
+void pint(stack_t **top, unsigned int n);
 
 #endif

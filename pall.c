@@ -1,10 +1,9 @@
 #include "monty.h"
 
 /**
- * pall - pall 
- * yop: pointer
- * n: number
- *
+ * pall - pall
+ * @top: pointer
+ * @n: number
  */
 
 void pall(stack_t **top, unsigned int n)
