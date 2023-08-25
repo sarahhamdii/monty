@@ -15,6 +15,7 @@ int execute(char *buff, stack_t **stack, unsigned int n, FILE *file)
 		{"push", push},
 		{"pall", pall},
 		{"pint", pint},
+		{"pop", pop},
 		{NULL, NULL},
 	};
 	unsigned int i = 0;

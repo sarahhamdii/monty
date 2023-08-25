@@ -63,5 +63,6 @@ int execute(char *buff, stack_t **stack, unsigned int n, FILE *file);
 void pall(stack_t **top, unsigned int n);
 void push(stack_t **stack, unsigned int line_number);
 void pint(stack_t **top, unsigned int n);
+void pop(stack_t **top, unsigned int n);
 
 #endif
