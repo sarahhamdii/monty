@@ -1,8 +1,9 @@
 #include "monty.h"
 
 /**
- *
- *
+ * pall - pall 
+ * yop: pointer
+ * n: number
  *
  */
 
@@ -12,13 +13,10 @@ void pall(stack_t **top, unsigned int n)
 	(void)n;
 
 	head2 = *top;
-	if (head2 == NULL)
-		return;
-	while (head2)
+	while (head2 != NULL)
 	{
 		fprintf(stdout, "%d\n", head2->n);
 		head2 = head2->next;
 	}
 
 }
-
