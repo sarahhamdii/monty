@@ -22,6 +22,7 @@ int execute(char *buff, stack_t **stack, unsigned int n, FILE *file)
 		{"sub", sub},
 		{"div", divide},
 		{"mul", mul},
+		{"mod", mod},
 		{NULL, NULL},
 	};
 	unsigned int i = 0;
