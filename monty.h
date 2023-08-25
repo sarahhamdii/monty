@@ -64,5 +64,6 @@ void pall(stack_t **top, unsigned int n);
 void push(stack_t **stack, unsigned int line_number);
 void pint(stack_t **top, unsigned int n);
 void pop(stack_t **top, unsigned int n);
+void nop(stack_t **top, unsigned int n);
 
 #endif

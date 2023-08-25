@@ -19,3 +19,15 @@ void pop(stack_t **top, unsigned int n)
 	*top = head->next;
 	free(head);
 }
+
+/**
+ * nop - doesn’t do anything
+ * @top: pointer
+ * @n: number
+ */
+void nop(stack_t **top, unsigned int n)
+{
+	(void) top;
+	(void) n;
+}
+
