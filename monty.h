@@ -66,5 +66,6 @@ void pint(stack_t **top, unsigned int n);
 void pop(stack_t **top, unsigned int n);
 void nop(stack_t **top, unsigned int n);
 void swap(stack_t **top, unsigned int n);
+void add(stack_t **top, unsigned int n);
 
 #endif
